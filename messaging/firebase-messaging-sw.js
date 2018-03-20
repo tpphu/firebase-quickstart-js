@@ -30,6 +30,10 @@ var messaging = firebase.messaging();
  // [END initialize_firebase_in_sw]
  **/
 
+// Tai lieu
+// https://github.com/firebase/quickstart-js/issues/71#issuecomment-258872970
+// https://developers.google.com/web/fundamentals/push-notifications/display-a-notification
+
 
 // If you would like to customize notifications that are received in the
 // background (Web app is closed or not in browser focus) then you should
@@ -38,11 +42,10 @@ var messaging = firebase.messaging();
 messaging.setBackgroundMessageHandler(function(payload) {
   console.log('[firebase-messaging-sw.js] Received background message ', payload);
   // Customize notification here
-  var notificationTitle = 'Background Message Title';
-  var notificationOptions = {
-    body: 'Background Message body.' + ' phu dep trai!',
-    icon: '/firebase-logo.png'
-  };
+  var data = payload.data;
+  var notificationTitle = data.title;
+  delete data.title;
+  var notificationOptions = data;
 
   return self.registration.showNotification(notificationTitle,
     notificationOptions);
