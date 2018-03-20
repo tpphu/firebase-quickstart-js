@@ -15,5 +15,9 @@
   "devDependencies": {
     "eslint": "^4.17.0",
     "lerna": "^2.8.0"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "node-fetch": "^2.1.1"
   }
 }

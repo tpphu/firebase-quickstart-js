@@ -40,7 +40,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
   // Customize notification here
   var notificationTitle = 'Background Message Title';
   var notificationOptions = {
-    body: 'Background Message body.',
+    body: 'Background Message body.' + ' phu dep trai!',
     icon: '/firebase-logo.png'
   };
 
